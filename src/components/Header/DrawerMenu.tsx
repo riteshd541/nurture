@@ -1,7 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
-const DrawerMenu = ({ open, onClose }) => {
+interface DrawerMenuProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+const DrawerMenu: React.FC<DrawerMenuProps> = ({ open, onClose }) => {
+
   const navigate = useNavigate();
 
   return (

@@ -1,4 +1,5 @@
 import "./Home.css";
+import Button from "@mui/material/Button";
 
 const Home = () => {
   return (
@@ -14,8 +15,8 @@ const Home = () => {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">Explore Programs</button>
-            <button className="secondary-btn">Book a Consultation</button>
+            <Button color="primary" variant="contained">Explore Programs</Button>
+            <Button color ="secondary" variant="outlined">Book a Consultation</Button>
           </div>
         </div>
 
@@ -30,7 +31,7 @@ const Home = () => {
       {/* MINI CTA */}
       <section className="cta-section">
         <h2>Start Your Parenting Journey Today</h2>
-        <button className="primary-btn">Get Started</button>
+        <Button variant="contained" color="primary">Get Started</Button>
       </section>
 
       {/* FEATURES SECTION */}

@@ -9,9 +9,10 @@ import "./Footer.css";
 const Footer = () => {
   const navigate = useNavigate();
 
-  const navigateTo = (route) => {
-    navigate(route);
-  };
+const navigateTo = (route: string) => {
+  navigate(route);
+};
+
 
   const staticPolicies = [
     { name: "Privacy Policy", route: "/policy/privacy-policy" },

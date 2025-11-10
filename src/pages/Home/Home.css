@@ -37,26 +37,6 @@
   margin-top: 30px;
 }
 
-.primary-btn {
-  padding: 12px 22px;
-  background: var(--primaryColor);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.secondary-btn {
-  padding: 12px 22px;
-  background: white;
-  border: 2px solid var(--secondaryColor);
-  border-radius: 6px;
-  color: var(--secondaryColor);
-  cursor: pointer;
-  font-size: 16px;
-}
-
 .hero-image img {
   width: 280px;
   height: auto;

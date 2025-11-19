@@ -5,7 +5,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        /* Primary Palette */
         primary: {
           50: "#fff7ed",
           100: "#ffedd5",
@@ -54,13 +53,11 @@ module.exports = {
         info: "#3b82f6",
       },
 
-      // Custom font sizes (if needed)
       fontSize: {
         base: "16px",
-        "2xl": "1.5rem", // For example, you can change this based on your design
+        "2xl": "1.5rem",
       },
 
-      // Custom radius
       borderRadius: {
         sm: "0.375rem",
         md: "0.5rem",
@@ -68,7 +65,6 @@ module.exports = {
         xl: "1rem",
       },
 
-      // Add box shadows
       boxShadow: {
         sm: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
         md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
@@ -78,7 +74,6 @@ module.exports = {
           "0 0 20px rgba(254,154,0,0.3), 0 0 40px rgba(254,154,0,0.1)",
       },
 
-      // Custom Animations
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0 },
@@ -100,7 +95,6 @@ module.exports = {
         "slide-down": "slideDown 0.6s ease-out",
       },
 
-      // Gradients
       backgroundImage: {
         "gradient-primary": "linear-gradient(to right, #e17100, #bb4d00)",
         "gradient-accent": "linear-gradient(135deg, #fe9a00 0%, #e17100 100%)",

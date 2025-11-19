@@ -179,7 +179,7 @@ export function Home() {
               </div>
 
               {/* FLOAT CARD */}
-              <div className="absolute bottom-8 left-0 bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20 max-w-xs">
+              <div className="hidden lg:block absolute bottom-8 left-0 bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20 max-w-xs">
                 <div className="flex items-center space-x-4">
                   <div className="bg-gradient-to-br from-[#89CFF0] to-[#5FB3D8] p-4 rounded-xl">
                     <Heart className="h-8 w-8 text-white" />

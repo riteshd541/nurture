@@ -5,6 +5,7 @@ import {Home} from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Programs from "../pages/Programs/Programs";
 import Blog from "../pages/Blog/Blog";
+import {Expert} from "../pages/Expert/Expert";
 import {Login} from "../pages/Login/Login";
 
 const AppRouter = () => {
@@ -14,6 +15,7 @@ const AppRouter = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+          <Route path="/experts" element={<Expert />} />
           <Route path="/about" element={<About />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/blog" element={<Blog />} />

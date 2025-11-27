@@ -15,7 +15,7 @@ export default function Header() {
   const navItems = [
     { label: "Home", to: "/" },
     { label: "Shop", to: "/products" },
-    { label: "Experts", to: "/services" },
+    { label: "Experts", to: "/experts" },
     { label: "Learn", to: "/blog" },
     { label: "AI", to: "/ai-features", icon: <Sparkles className="h-4 w-4 mr-1" /> },
   ];

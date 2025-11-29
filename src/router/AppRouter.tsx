@@ -7,6 +7,7 @@ import Programs from "../pages/Programs/Programs";
 import Blog from "../pages/Blog/Blog";
 import {Expert} from "../pages/Expert/Expert";
 import {Login} from "../pages/Login/Login";
+import { AIFeatures } from "../pages/AIFeatures/AIFeatures";
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
           <Route path="/about" element={<About />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/ai-features" element={<AIFeatures />} />
         </Route>
 
       </Routes>

@@ -92,7 +92,7 @@ export function Home() {
   ];
 
   return (
-    <div className="min-h-screen mt-[100px]">
+    <div className="min-h-screen mt-[100px] bg-bg text-foreground">
 
       {/* ---------------------- HERO SECTION ---------------------- */}
       <section className="relative overflow-hidden pb-20">
@@ -203,7 +203,7 @@ export function Home() {
       </section>
 
       
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-24 bg-bg text-foreground">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="bg-[#89CFF0]/10 text-[#89CFF0]">Features</Badge>
@@ -217,21 +217,26 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, i) => (
-              <Card
-                key={i}
-                className="shadow-lg rounded-3xl hover:shadow-xl transition-all"
-                sx={{ borderRadius: "24px" }}
-              >
-                <CardContent className="p-8">
-                  <div className="bg-[#89CFF0]/10 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
-                    {f.icon}
-                  </div>
+  <Card
+    key={i}
+    className="shadow-lg rounded-3xl hover:shadow-xl transition-all"
+    sx={{
+      borderRadius: "24px",
+      backgroundColor: "var(--color-card)",            
+      color: "var(--color-card-foreground)",           
+    }}
+  >
+    <CardContent className="p-8">
+      <div className="bg-[color:var(--baby-blue-light)] w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+        {f.icon}
+      </div>
 
-                  <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
-                  <p className="text-gray-600">{f.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+      <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
+      <p className="text-muted">{f.description}</p>
+    </CardContent>
+  </Card>
+))}
+
           </div>
         </div>
       </section>
@@ -295,74 +300,97 @@ export function Home() {
       </section>
 
       
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-[#FFB6C1]/10 text-[#FFB6C1]">Testimonials</Badge>
-            <h2 className="text-5xl font-bold mb-4">Loved by Families</h2>
-            <p className="text-xl text-gray-600">Real stories from mothers</p>
-          </div>
+<section className="py-24 bg-bg text-foreground">
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="text-center mb-16">
+      <Badge className="bg-[color:var(--baby-pink-light)]/10 text-[color:var(--baby-pink)]">
+        Testimonials
+      </Badge>
+      <h2 className="text-5xl font-bold mb-4">Loved by Families</h2>
+      <p className="text-xl text-muted">Real stories from mothers</p>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <Card
-                key={i}
-                className="shadow-lg rounded-3xl hover:shadow-xl"
-                sx={{ borderRadius: "24px" }}
-              >
-                <CardContent className="p-8">
-                  <div className="flex space-x-1 mb-6">
-                    {[...Array(t.rating)].map((_, idx) => (
-                      <Star key={idx} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((t, i) => (
+        <Card
+          key={i}
+          className="shadow-lg rounded-3xl hover:shadow-xl"
+          sx={{
+            borderRadius: "24px",
+            backgroundColor: "var(--color-card)",
+            color: "var(--color-card-foreground)",
+          }}
+        >
+          <CardContent className="p-8">
+            <div className="flex space-x-1 mb-6">
+              {[...Array(t.rating)].map((_, idx) => (
+                <Star
+                  key={idx}
+                  className="h-5 w-5"
+                  style={{ color: "var(--color-chart-4)" }}
+                />
+              ))}
+            </div>
 
-                  <p className="text-gray-700 mb-6">"{t.content}"</p>
+            <p className="text-card-foreground mb-6">"{t.content}"</p>
 
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src={t.avatar}
-                      alt={t.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="font-semibold">{t.name}</p>
-                      <p className="text-sm text-gray-500">{t.role}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+            <div className="flex items-center space-x-4">
+              <img
+                src={t.avatar}
+                alt={t.name}
+                className="w-12 h-12 rounded-full object-cover"
+              />
+              <div>
+                <p className="font-semibold text-card-foreground">{t.name}</p>
+                <p className="text-sm text-muted-foreground">{t.role}</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-[#89CFF0]/10 text-[#89CFF0]">Partnerships</Badge>
-            <h2 className="text-5xl font-bold mb-4">
-              Trusted by Leading Organizations
-            </h2>
-          </div>
+<section className="py-24 bg-bg text-foreground">
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="text-center mb-16">
+      <Badge className="bg-[color:var(--baby-blue-light)]/10 text-[color:var(--baby-blue)]">
+        Partnerships
+      </Badge>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-            {["Apollo", "Fortis", "TCS", "Infosys", "Wipro"].map((p, i) => (
-              <Card
-                key={i}
-                className="shadow-md rounded-2xl hover:shadow-lg text-center"
-                sx={{ borderRadius: "20px" }}
-              >
-                <CardContent className="p-8">
-                  <Building2 className="h-10 w-10 text-[#89CFF0] mx-auto mb-3" />
-                  <p className="font-semibold text-gray-700">{p}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <h2 className="text-5xl font-bold mb-4">
+        Trusted by Leading Organizations
+      </h2>
+    </div>
+
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+      {["Apollo", "Fortis", "TCS", "Infosys", "Wipro"].map((p, i) => (
+        <Card
+          key={i}
+          className="shadow-md rounded-2xl hover:shadow-lg text-center"
+          sx={{
+            borderRadius: "20px",
+            backgroundColor: "var(--color-card)",
+            color: "var(--color-card-foreground)",
+          }}
+        >
+          <CardContent className="p-8">
+            <Building2
+              className="h-10 w-10 mx-auto mb-3"
+              style={{ color: "var(--baby-blue)" }}
+            />
+
+            <p className="font-semibold text-card-foreground">{p}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       
       <section className="py-24">

@@ -1,13 +1,153 @@
+/* ===========================
+   Theme variables & dark mode
+   Put this at the top of src/index.css (or src/styles/theme.css)
+   =========================== */
+
+/* Global CSS variables (light mode) */
 :root {
-  --primaryColor: #f47c90;
-  --secondaryColor: #74c2e1;
-  --textColor: "#333333";
-  --darkBlack: #030303;
-  --mediumGrey: #424242;
-  --lightGrey: #f3f3f3;
-  --hardWhite: #fefefe;
-  --lightGreen: #e3fae3;
-  --errorRedGroud: #ffa7a7;
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #89cff0;
+  --primary-foreground: #ffffff;
+  --secondary: #ffb6c1;
+  --secondary-foreground: #2d2d2d;
+  --muted: black;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #89cff0;
+  --chart-1: #89cff0;
+  --chart-2: #ffb6c1;
+  --chart-3: #b4e7ce;
+  --chart-4: #f9d5e5;
+  --chart-5: #a8d8ea;
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #89cff0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: #89cff0;
+
+  /* Custom YouEvolve Nurture Colors */
+  --baby-blue: #89cff0;
+  --baby-pink: #ffb6c1;
+  --baby-blue-light: #c4e7f5;
+  --baby-pink-light: #ffd9e0;
+  --baby-blue-dark: #5fb3d8;
+  --baby-pink-dark: #ff9baa;
+}
+
+/* Dark mode overrides: applied when <html> has class="dark" */
+.dark {
+  --background: #0f1419;
+  --foreground: #f0f0f0;
+  --card: #1a1f28;
+  --card-foreground: #f0f0f0;
+  --popover: #1a1f28;
+  --popover-foreground: #f0f0f0;
+  --primary: #89cff0;
+  --primary-foreground: #0f1419;
+  --secondary: #ffb6c1;
+  --secondary-foreground: #0f1419;
+  --muted: white;
+  --muted-foreground: #a8b3c1;
+  --accent: #2d3441;
+  --accent-foreground: #f0f0f0;
+  --destructive: #ff4d6d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(137, 207, 240, 0.15);
+  --input: rgba(137, 207, 240, 0.1);
+  --input-background: #252b36;
+  --switch-background: #3d4656;
+  --ring: #89cff0;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #89cff0;
+  --chart-2: #ffb6c1;
+  --chart-3: #b4e7ce;
+  --chart-4: #f9d5e5;
+  --chart-5: #a8d8ea;
+  --sidebar: #1a1f28;
+  --sidebar-foreground: #f0f0f0;
+  --sidebar-primary: #89cff0;
+  --sidebar-primary-foreground: #0f1419;
+  --sidebar-accent: #252b36;
+  --sidebar-accent-foreground: #f0f0f0;
+  --sidebar-border: rgba(137, 207, 240, 0.15);
+  --sidebar-ring: #89cff0;
+
+  /* Custom YouEvolve Nurture Colors for Dark Mode */
+  --baby-blue: #89cff0;
+  --baby-pink: #ffb6c1;
+  --baby-blue-light: #5fb3d8;
+  --baby-pink-light: #ff9baa;
+  --baby-blue-dark: #4a9bc5;
+  --baby-pink-dark: #e89cab;
+}
+
+/* Map variables to semantic --color-* names used in tailwind.config.js */
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Typography fallback (optional — keep if you want) */
+
+/* ensure base font-size rule */
+html {
+  font-size: var(--font-size);
 }
 
 html,

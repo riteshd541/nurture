@@ -10,10 +10,10 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="layout-wrapper">
+    <div className="layout-wrapper bg-bg text-foreground">
       <Header />
 
-      <main className="layout-content">
+      <main className="layout-content bg-bg text-foreground">
         <Outlet />
       </main>
       <Footer />

@@ -1,9 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class", // <-- important: use class strategy (adds .dark to <html>)
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
 
   theme: {
     extend: {
+      /* Keep your original color scales for utility usage */
       colors: {
         primary: {
           50: "#fff7ed",
@@ -51,8 +53,46 @@ module.exports = {
         success: "#22c55e",
         warning: "#fe9a00",
         info: "#3b82f6",
+
+        /* Semantic color tokens mapped to your CSS variables.
+           Use classes like bg-bg, text-foreground, bg-card, text-card-foreground, etc.
+           These resolve at runtime from :root / .dark variables you provided. */
+        bg: "var(--color-background)",
+        foreground: "var(--color-foreground)",
+        "card-bg": "var(--color-card)",
+        "card-foreground": "var(--color-card-foreground)",
+        popover: "var(--color-popover)",
+        "popover-foreground": "var(--color-popover-foreground)",
+        primary: "var(--color-primary)",
+        "primary-foreground": "var(--color-primary-foreground)",
+        secondary: "var(--color-secondary)",
+        "secondary-foreground": "var(--color-secondary-foreground)",
+        muted: "var(--color-muted)",
+        "muted-foreground": "var(--color-muted-foreground)",
+        accent: "var(--color-accent)",
+        "accent-foreground": "var(--color-accent-foreground)",
+        destructive: "var(--color-destructive)",
+        "destructive-foreground": "var(--color-destructive-foreground)",
+        border: "var(--color-border)",
+        input: "var(--color-input)",
+        "input-bg": "var(--color-input-background)",
+        ring: "var(--color-ring)",
+        "chart-1": "var(--color-chart-1)",
+        "chart-2": "var(--color-chart-2)",
+        "chart-3": "var(--color-chart-3)",
+        "chart-4": "var(--color-chart-4)",
+        "chart-5": "var(--color-chart-5)",
+        sidebar: "var(--color-sidebar)",
+        "sidebar-foreground": "var(--color-sidebar-foreground)",
+        "sidebar-primary": "var(--color-sidebar-primary)",
+        "sidebar-primary-foreground": "var(--color-sidebar-primary-foreground)",
+        "sidebar-accent": "var(--color-sidebar-accent)",
+        "sidebar-accent-foreground": "var(--color-sidebar-accent-foreground)",
+        "sidebar-border": "var(--color-sidebar-border)",
+        "sidebar-ring": "var(--color-sidebar-ring)",
       },
 
+      /* Preserve your theme extensions */
       fontSize: {
         base: "16px",
         "2xl": "1.5rem",
